@@ -46,7 +46,7 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where("name LIKE ?", "%#{params[:query]}%")
+    @flats = Flat.where("LOWER(name) LIKE ?", "%#{params[:search][:query].downcase}%")
   end
 
   private
