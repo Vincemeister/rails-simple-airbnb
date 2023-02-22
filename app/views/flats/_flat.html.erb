@@ -1,0 +1,22 @@
+
+
+<div class="card" style="width: 18rem;">
+  <%= image_tag(flat.image_url, class: "card-img-to") %>
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.description.truncate(50) %></p>
+    <div class="bottom-card">
+      <div class="flex">
+        <div class="flex align-items-center">
+          <i class="fa-solid fa-people-line"></i>
+          <span><%= flat.number_of_guests %></span>
+        </div>
+        <div class="flex align-items-center ms-3">
+          <i class="fa-solid fa-euro-sign"></i>
+          <span><%= flat.price_per_night %></span>
+        </div>
+      </div>
+      <%= link_to 'Show', flat_path(flat), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
